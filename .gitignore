@@ -1,0 +1,13 @@
+# PHP
+vendor/
+.env
+
+# Rust
+rust-seeder/target/
+
+# Python
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
