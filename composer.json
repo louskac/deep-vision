@@ -1,0 +1,17 @@
+{
+    "name": "dv/high-perf-poc",
+    "require": {
+        "php": ">=8.4",
+        "ext-redis": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/src/"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "8.4"
+        }
+    }
+}

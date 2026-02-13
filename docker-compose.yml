@@ -1,0 +1,25 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/app
+    env_file:
+      - .env
+    environment:
+      FRANKENPHP_CONFIG: "worker /app/public/index.php"
+      SERVER_NAME: ":80"
+    tty: true
+
+  cache:
+    image: 'docker.dragonflydb.io/dragonflydb/dragonfly'
+    ports:
+      - "6379:6379"
+    ulimits:
+      memlock: -1
+      nofile:
+        soft: 65536
+        hard: 65536
